@@ -33,17 +33,17 @@ class App extends Component {
     return (
       <div className="App">
         <h1>React Animations</h1>
-        <button className="Button" onClick={this.toggleBlock}>
+        {/* <button className="Button" onClick={this.toggleBlock}>
           Toggle
         </button>
         <br></br>
-        <br></br>
+        <br></br> */}
 
         {/* {this.state.showBlock ? ( */}
 
         {/* This is how animation can be done using react animate module */}
 
-        <Transition mountOnEnter unmountOnExit in={this.state.showBlock} timeout={500}>
+        {/* <Transition mountOnEnter unmountOnExit in={this.state.showBlock} timeout={500}>
           {(state) => (
             <div
               style={{
@@ -56,13 +56,17 @@ class App extends Component {
               }}
             ></div>
           )}
-        </Transition>
+        </Transition> */}
 
         {/* ) : null} */}
 
-        <br></br>
+        {/* <br></br> */}
+
+        
         <Modal show={this.state.ModalIsOpen} closed={this.closeModal} />
-        <Backdrop show={this.state.ModalIsOpen} closed={this.closeModal} />
+
+        {this.state.ModalIsOpen ? <Backdrop show /> : null}
+
         <button className="Button" onClick={this.showModal}>
           Open Modal
         </button>
